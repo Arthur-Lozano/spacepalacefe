@@ -10,8 +10,10 @@ const Footer = () => {
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
+
       marginTop: "5em",
       fontWeight: "bold",
+
     },
     links: {
       display: "flex",
@@ -28,6 +30,7 @@ const Footer = () => {
         <li>HELP</li>
       </ul>
       <p>&copy; Space Palace 2021</p>
+
     </div>
   );
 };
