@@ -10,11 +10,15 @@ const Footer = () => {
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
+
+      marginTop: "5em",
+      fontWeight: "bold",
+
     },
     links: {
       display: "flex",
       listStyleType: "none",
-      justifyContent: "space-around",
+      justifyContent: "space-between",
       width: "50%",
     },
   };
@@ -25,6 +29,8 @@ const Footer = () => {
         <li>ABOUT US</li>
         <li>HELP</li>
       </ul>
+      <p>&copy; Space Palace 2021</p>
+
     </div>
   );
 };
