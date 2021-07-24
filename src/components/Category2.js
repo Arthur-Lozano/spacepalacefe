@@ -38,7 +38,7 @@ const Category2 = () => {
     catCard: {
       boxSizing: "border-box",
       display: "flex",
-      width: "30%",
+      width: "28%",
       justifyContent: "center",
       alignItems: "center",
       flexDirection: "column",

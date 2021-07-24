@@ -5,9 +5,12 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import Product from "./pages/Product";
 import StripeContainer from "./pages/account/StripeContainer";
-import LogIn from "./pages/LogIn";
-// import Products from "./pages/ProductPage";
-import './App.css';
+// import LogIn from "./pages/LogIn";
+import Products from "./pages/ProductPage";
+import Register from "./pages/Register";
+
+
+
 function App() {
   const [showItem, setShowItem] = useState(false);
   return (
@@ -36,8 +39,9 @@ function App() {
       <Switch>
         <Route path='/' component={LandingPage} exact />
         <Route path='/product' component={Product} exact />
-        <Route path='/login' component={LogIn} exact />
-         <Route path='/products' component={Product} exact /> 
+        {/* <Route path='/login' component={LogIn} exact /> */}
+        <Route path='/products' component={Products} exact />
+        <Route path='/register' component={Register} exact />
 
       </Switch>
     </Router>

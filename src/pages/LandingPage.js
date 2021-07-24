@@ -26,7 +26,6 @@ const landingpage = () => {
       <Category2 />
       <Footer />
     </div>
-
   );
 };
 
