@@ -6,6 +6,7 @@ import LandingPage from "./pages/LandingPage";
 import Product from "./pages/Product";
 import StripeContainer from "./pages/account/StripeContainer";
 import LogIn from "./pages/LogIn";
+import Products from "./pages/ProductPage";
 
 function App() {
   const [showItem, setShowItem] = useState(false);
@@ -35,6 +36,7 @@ function App() {
         <Route path='/' component={LandingPage} exact />
         <Route path='/product' component={Product} exact />
         <Route path='/login' component={LogIn} exact />
+        <Route path='/products' component={Products} exact />
       </Switch>
     </Router>
   );
