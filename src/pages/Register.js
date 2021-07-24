@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import { register } from "../store/user-store";
 
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -52,8 +54,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp() {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
-  const url = "http://localhost:3333/register";
+  const storeUser = useSelector((state) => state.user);
 
   const [user, setUser] = useState({
     firstName: "",
@@ -69,8 +72,8 @@ export default function SignUp() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const response = await axios.post(url, user);
-    console.log(response);
+    console.log("About to hit the store to register");
+    dispatch(register(user));
   };
 
   return (
