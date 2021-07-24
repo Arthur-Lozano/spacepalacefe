@@ -6,7 +6,6 @@ import Category2 from "../components/Category2";
 
 
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 const landingpage = () => {
   const style = {

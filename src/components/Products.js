@@ -92,19 +92,31 @@ export default function Album(props) {
           {/* End hero unit */}
           <Grid container spacing={4}>
             {product.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+              <Grid item key={card._id} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image={card.image}
-                    title={product.name}
+
+                  
+
+                    image={card.images}
+                    title={card.name}
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Space Product
+                      {card.description}
                     </Typography>
                     <Typography>
+                      Item Weight: {card.itemWeight}
                     </Typography>
+
+                    <Typography>
+                      Category: {card.category}
+                    </Typography>
+                    <Typography>
+                      Details: {card.details}
+                    </Typography>
+
                   </CardContent>
                   <CardActions>
                     <Button size="small" color="primary">
