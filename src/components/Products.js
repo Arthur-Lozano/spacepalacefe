@@ -15,6 +15,7 @@ import Header from '../components/Header';
 import Image from '../assets/space5.jpg';
 import { shadows } from '@material-ui/system';
 import { AirportShuttle } from '@material-ui/icons';
+import {addToCart} from './cart.js'
 
 const axios = require('axios');
 
@@ -56,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function Album() {
+export default function Album(props) {
   const classes = useStyles();
 
   const [product, setProducts] = useState([]);
@@ -95,6 +96,9 @@ export default function Album() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
+
+                  
+
                     image={card.images}
                     title={card.name}
                   />
@@ -118,9 +122,9 @@ export default function Album() {
                     <Button size="small" color="primary">
                       View
                     </Button>
-                    <Button size="small" color="primary">
-                      Add to cart
-                    </Button>
+                    <Button onClick={() => props.addToCart(product)}size="small" color="primary">
+                    ADD TO CART
+              </Button>
                   </CardActions>
                 </Card>
               </Grid>
