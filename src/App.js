@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import LandingPage from "./pages/LandingPage";
-import Product from "./pages/Product";
+import Product from "./pages/Productpage.js";
 import StripeContainer from "./pages/account/StripeContainer";
-import LogIn from "./pages/LogIn";
+// import LogIn from "./pages/LogIn";
 // import Products from "./pages/ProductPage";
 import './App.css';
 function App() {
@@ -36,8 +36,8 @@ function App() {
       <Switch>
         <Route path='/' component={LandingPage} exact />
         <Route path='/product' component={Product} exact />
-        <Route path='/login' component={LogIn} exact />
-         <Route path='/products' component={Product} exact /> 
+        {/* <Route path='/login' component={LogIn} exact /> */}
+        <Route path='/products' component={Product} exact />
 
       </Switch>
     </Router>
