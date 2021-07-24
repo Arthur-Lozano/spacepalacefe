@@ -3,7 +3,7 @@ import Banner from "../components/Banner";
 import BrowseByPlanet from "../components/BrowseByPlanet";
 import Category1 from "../components/Category1";
 import Category2 from "../components/Category2";
-import Footer from "../components/Footer";
+
 
 import Header from "../components/Header";
 

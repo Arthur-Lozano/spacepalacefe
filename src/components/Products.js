@@ -15,6 +15,7 @@ import Header from '../components/Header';
 import Image from '../assets/space5.jpg';
 import { shadows } from '@material-ui/system';
 import { AirportShuttle } from '@material-ui/icons';
+import {addToCart} from './cart.js'
 
 const axios = require('axios');
 
@@ -56,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function Album() {
+export default function Album(props) {
   const classes = useStyles();
 
   const [product, setProducts] = useState([]);
@@ -91,27 +92,39 @@ export default function Album() {
           {/* End hero unit */}
           <Grid container spacing={4}>
             {product.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+              <Grid item key={card._id} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image={product.image}
-                    title={product.name}
+
+                  
+
+                    image={card.images}
+                    title={card.name}
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Space Product
+                      {card.description}
                     </Typography>
                     <Typography>
+                      Item Weight: {card.itemWeight}
                     </Typography>
+
+                    <Typography>
+                      Category: {card.category}
+                    </Typography>
+                    <Typography>
+                      Details: {card.details}
+                    </Typography>
+
                   </CardContent>
                   <CardActions>
                     <Button size="small" color="primary">
                       View
                     </Button>
-                    <Button size="small" color="primary">
-                      Add to cart
-                    </Button>
+                    <Button onClick={() => props.addToCart(product)}size="small" color="primary">
+                    ADD TO CART
+              </Button>
                   </CardActions>
                 </Card>
               </Grid>

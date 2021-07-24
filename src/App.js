@@ -9,9 +9,12 @@ import StripeContainer from "./pages/account/StripeContainer";
 import Products from "./pages/ProductPage";
 import Register from "./pages/Register";
 
+
+
 function App() {
   const [showItem, setShowItem] = useState(false);
   return (
+    // <>
     // <div className='App'>
     //   <h1>SPACE PALACE STORE</h1>
     //   {showItem ? (
@@ -39,8 +42,10 @@ function App() {
         {/* <Route path='/login' component={LogIn} exact /> */}
         <Route path='/products' component={Products} exact />
         <Route path='/register' component={Register} exact />
+
       </Switch>
     </Router>
+    // </>
   );
 }
 
