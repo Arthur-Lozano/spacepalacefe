@@ -2,8 +2,11 @@ import React, { useEffect } from "react";
 import banner from "../assets/space18.jpg";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 const Banner = () => {
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+
   useEffect(() => {
     try {
       let response = axios.get();
@@ -45,11 +48,18 @@ const Banner = () => {
   return (
     <div style={style.container}>
       <h2> the shop of tomorrow! </h2>
-      <button style={style.btn}>
-        <Link style={{ textDecoration: "none", color: "inherit" }} to='/login'>
-          LOGIN
-        </Link>
-      </button>
+      {!isLoggedIn ? (
+        <button style={style.btn}>
+          <Link
+            style={{ textDecoration: "none", color: "inherit" }}
+            to='/login'
+          >
+            LOGIN
+          </Link>
+        </button>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

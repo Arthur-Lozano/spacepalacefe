@@ -8,7 +8,7 @@ import store from "./store/index";
 import LandingPage from "./pages/LandingPage";
 import Product from "./pages/Product";
 import StripeContainer from "./pages/account/StripeContainer";
-// import LogIn from "./pages/LogIn";
+import LogIn from "./pages/Login";
 import Products from "./pages/Productpage";
 import Register from "./pages/Register";
 
@@ -41,7 +41,7 @@ function App() {
         <Switch>
           <Route path='/' component={LandingPage} exact />
           <Route path='/product' component={Product} exact />
-          {/* <Route path='/login' component={LogIn} exact /> */}
+          <Route path='/login' component={LogIn} exact />
           {/* <Route path='/products' component={Products} exact /> */}
           <Route path='/register' component={Register} exact />
         </Switch>
