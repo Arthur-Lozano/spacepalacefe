@@ -6,8 +6,9 @@ import { Provider } from "react-redux";
 import store from "./store/index";
 
 import LandingPage from "./pages/LandingPage";
-import Product from "./pages/Product";
+import Product from "./pages/Productpage.js";
 import StripeContainer from "./pages/account/StripeContainer";
+
 import LogIn from "./pages/Login";
 import Products from "./pages/Productpage";
 import Register from "./pages/Register";
