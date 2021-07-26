@@ -15,8 +15,8 @@ import Header from '../components/Header';
 import Image from '../assets/space5.jpg';
 import { shadows } from '@material-ui/system';
 import { AirportShuttle } from '@material-ui/icons';
-import {addToCart} from './cart.js'
-
+import { addToCart } from './cart.js'
+import { Link } from 'react-router-dom';
 const axios = require('axios');
 
 
@@ -96,9 +96,6 @@ export default function Album(props) {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-
-                  
-
                     image={card.images}
                     title={card.name}
                   />
@@ -127,6 +124,7 @@ export default function Album(props) {
                     </Link>
                     ADD TO CART
               </Button>
+
                   </CardActions>
                 </Card>
               </Grid>
@@ -136,6 +134,6 @@ export default function Album(props) {
       </main>
       {/* Footer */}
       <Footer />
-    </React.Fragment>
+    </React.Fragment >
   );
 }
