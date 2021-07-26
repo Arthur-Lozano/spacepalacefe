@@ -46,8 +46,7 @@ function App() {
           <Route path='/' component={LandingPage} exact />
           <Route path='/product' component={Product} exact />
           <Route path='/login' component={LogIn} exact />
-          {/* <Route path='/products' component={Products} exact /> */}
-
+          <Route path='/products' component={Products} exact />
           <Route path='/register' component={Register} exact />
         </Switch>
       </Router>

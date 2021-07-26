@@ -36,14 +36,14 @@ export default function reducer(state = initialState, action) {
 }
 
 export const register = (user) => async (dispatch) => {
-  const url = "http://localhost:3333/register";
+  const url = `${process.env.REACT_APP_BE_URL + "register"}`;
   const response = await axios.post(url, user);
 
   dispatch(saveUser(response.data));
 };
 
 export const login = (user) => async (dispatch) => {
-  const url = "http://localhost:3333/login";
+  const url = `${process.env.REACT_APP_BE_URL + "login"}`;
   const auth = base64.encode(`${user.email}:${user.password}`);
   try {
     const response = await axios.post(url, user, {

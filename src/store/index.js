@@ -7,7 +7,7 @@ import userReducer from "./user-store";
 import thunk from "./middleware/thunk";
 
 const reducers = combineReducers({
-  product: productsReducer,
+  products: productsReducer,
   user: userReducer,
   // cart: cartReducer
 });

@@ -17,6 +17,9 @@ const Header = () => {
       justifyContent: "center",
       alignItems: "center",
       textDecoration: "none",
+      // position: "fixed",
+      // top: 0,
+      // background: "ivory",
     },
     links: {
       display: "flex",
