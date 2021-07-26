@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { register } from "../store/user-store";
+import { Redirect } from "react-router-dom";
 
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -30,6 +30,9 @@ function Copyright() {
     </Typography>
   );
 }
+function LoggedIn() {
+  return <Redirect to='/' />;
+}
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -56,7 +59,7 @@ export default function SignUp() {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const storeUser = useSelector((state) => state.user);
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
 
   const [user, setUser] = useState({
     firstName: "",
@@ -178,6 +181,7 @@ export default function SignUp() {
       <Box mt={5}>
         <Copyright />
       </Box>
+      {isLoggedIn ? <LoggedIn /> : ""}
     </Container>
   );
 }

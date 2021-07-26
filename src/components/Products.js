@@ -119,11 +119,12 @@ export default function Album(props) {
                     <Button size="small" color="primary">
                       View
                     </Button>
-                    <Link to={`/products/${card._id}`}>
-                      <Button size="small" color="primary">
-                        ADD TO CART
-                      </Button>
+                    <Link to={`/product/${card._id}`}>
+                     <Button onClick={() => props.addToCart(product)}size="small" color="primary">
                     </Link>
+                    ADD TO CART
+              </Button>
+
                   </CardActions>
                 </Card>
               </Grid>

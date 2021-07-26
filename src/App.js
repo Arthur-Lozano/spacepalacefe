@@ -11,9 +11,11 @@ import Product from './pages/Product.js';
 
 import Register from "./pages/Register.js";
 import StripeContainer from "./pages/account/StripeContainer";
-// import LogIn from "./pages/LogIn";
-// import Products from "./pages/ProductPage";
-import './App.css';
+
+import LogIn from "./pages/Login";
+import Products from "./pages/Productpage";
+import Register from "./pages/Register";
+
 function App() {
   const [showItem, setShowItem] = useState(false);
   return (
@@ -42,9 +44,10 @@ function App() {
       <Router>
         <Switch>
           <Route path='/' component={LandingPage} exact />
-          <Route path='/product/:id' component={Product} exact />
-          {/* <Route path='/login' component={LogIn} exact /> */}
-          <Route path='/products' component={Products} exact />
+          <Route path='/product' component={Product} exact />
+          <Route path='/login' component={LogIn} exact />
+          {/* <Route path='/products' component={Products} exact /> */}
+
           <Route path='/register' component={Register} exact />
         </Switch>
       </Router>
