@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Form, Button } from 'react-bootstrap';
-import styles from '../contact/contact.css';
+// import styles from '../contact/contact.css';
 
 const ContactForm = () => {
   const [state, setState] = useState({
@@ -16,7 +16,7 @@ const ContactForm = () => {
   const sendEmail = event => {
     event.preventDefault();
     axios
-      .post('/send', { ...state })
+      .post('https://spacepalacedb.herokuapp.com/send', { ...state })
       .then(response => {
         setResult(response.data);
         setState({
