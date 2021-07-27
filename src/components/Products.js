@@ -121,6 +121,7 @@ export default function Album(props) {
                     <Typography>Category: {card.category}</Typography>
                     <Typography>Details: {card.details}</Typography>
                   </CardContent>
+
                   <CardActions>
                     <Button size='small' color='primary'>
                       View
