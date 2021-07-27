@@ -74,7 +74,7 @@ const Product = (props) => {
             <h3>{product.name}</h3>
             <p>{product.details}</p>
             <p> {product.description}</p>
-            <button onClick={addToCart}> Add to Cart</button>
+            <button className="addtocart" onClick={addToCart}> Add to Cart</button>
           </div>
         </>
       )}
