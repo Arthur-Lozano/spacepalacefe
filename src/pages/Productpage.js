@@ -59,13 +59,20 @@ const ProductsPage = () => {
             <Grid key={i} item xs={12} sm={6} lg={3}>
               <Card key={i} className={classes.root}>
                 <CardActionArea>
-                  <CardMedia
-                    className={classes.media}
+                  <CardMedia style= {{
+                    width:'270px',
+                    border:'10px solid black'
+                  }}
+                  className={classes.media}
                     image={product.images && product.images[0]}
                     title='Product Picture'
                     // src={product.images && product.images[0]}
                   />
-                  <CardContent>
+                  <CardContent style= {{
+                    color:'green',
+                    fontSize:'small',
+                    fontFamily:'cursive',
+                  }}>
                     <Typography gutterBottom variant='h5' component='h2'>
                       {product.name}
                     </Typography>
@@ -78,16 +85,18 @@ const ProductsPage = () => {
                   </CardContent>
                 </CardActionArea>
                 <CardActions className={classes.buttonContainer}>
-                  <Button
+                  <Button 
                     onClick={() => addToCart(product)}
-                    size='small'
-                    color='primary'
+                  style={{ textDecoration: "none", color: "white",backgroundColor:'red', fontFamily:'monospace',height:'30px' }}
+                    // size='small'
+                    // color='primary'
+                    // background-color="red"
                   >
                     ADD TO CART
                   </Button>
                   <Button size='small' color='primary'>
-                    <Link
-                      style={{ textDecoration: "none", color: "inherit" }}
+                    <Link 
+                      style={{ textDecoration: "none", color: "white",backgroundColor:'red',height:'30px',width:'100px', fontFamily:'monospace' }}
                       to={`/product/${product._id}`}
                     >
                       VIEW DETAILS
@@ -103,3 +112,4 @@ const ProductsPage = () => {
 };
 
 export default ProductsPage;
+

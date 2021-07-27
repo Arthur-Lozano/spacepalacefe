@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../store/user-store";
-
+import './header.css'
 const Header = () => {
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
   const cart = useSelector((state) => state.cart);
@@ -41,19 +41,17 @@ const Header = () => {
   };
   return (
     <div style={style.title}>
-       <Link style={{ textDecoration: "none" }} to='/'>
-      <h1>S P A C E &nbsp;&nbsp; P A L A C E</h1>
-      </Link>
+      <h1  className="title">S P A C E &nbsp;&nbsp; P A L A C E</h1>
       <ul style={style.links}>
         {!isLoggedIn ? (
           <li>
-            <Link style={{ textDecoration: "none" }} to='/login'>
+            <Link  className="link" style={{ textDecoration: "none" }} to='/login'>
               LOGIN
             </Link>
           </li>
         ) : (
           <li>
-            <Link
+            <Link className="link"
               style={{ textDecoration: "none", color: "black" }}
               to='/account'
             >
@@ -63,13 +61,13 @@ const Header = () => {
         )}
         {!isLoggedIn ? (
           <li>
-            <Link style={{ textDecoration: "none" }} to='/register'>
+            <Link className="link" style={{ textDecoration: "none" }} to='/register'>
               REGISTER
             </Link>
           </li>
         ) : (
           <li>
-            <Link
+            <Link 
               style={{ textDecoration: "none", color: "black" }}
               to='/user/orders'
             >
@@ -78,12 +76,12 @@ const Header = () => {
           </li>
         )}
         <li>
-          <Link style={{ textDecoration: "none" }} to='/products'>
+          <Link className="link" style={{ textDecoration: "none" }} to='/products'>
             PRODUCTS
           </Link>
         </li>
         <li>
-          <Link style={{ textDecoration: "none" }} to='/cart'>
+          <Link className="link" style={{ textDecoration: "none" }} to='/cart'>
             CART({cart.length})
           </Link>
         </li>

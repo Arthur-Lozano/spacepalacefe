@@ -1,0 +1,90 @@
+.link{
+  color:black;
+  text-align: center;
+  font-weight:bold;
+  font-family:cursive;
+  
+ 
+}
+
+
+.link:hover {
+  background-color:lightslategray;
+  
+}
+.title{
+
+  font-family:'Otomanopee One', sans-serif;
+  color:firebrick;
+  text-decoration: underline overline black;
+  text-shadow: 2px 2px yellow;
+  background-color: rgb(9, 5, 22);
+
+} 
+
+.productprops{
+  color:rgb(94, 67, 67);
+  font-size:xx-small;
+  font-family:cursive;
+
+}
+
+
+
+
+ /* @media(min-width:480px){
+  body{
+    max-width:768px;
+    margin: auto;
+    
+   }
+   .link{
+    color:black;
+    text-align: center;
+    font-weight:bold;
+    font-family:cursive;
+    
+   
+  }
+  .link:hover {
+    background-color:lightslategray;
+    
+  }
+  .title{
+
+    font-family:'Otomanopee One', sans-serif;
+    color:firebrick
+  
+  }
+  
+              
+  }
+
+
+    @media(min-width:768px){
+      body{
+        max-width:960px;
+        margin: auto;
+        
+       }
+       .link{
+        color:black;
+        text-align: center;
+        font-weight:bold;
+        font-family:cursive;
+        
+       
+      }
+      .link:hover {
+        background-color:lightslategray;
+        
+      }
+      .title{
+    
+        font-family:'Otomanopee One', sans-serif;
+        color:firebrick
+      
+      }
+      
+                  
+      } */
