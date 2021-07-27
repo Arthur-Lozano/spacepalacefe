@@ -6,8 +6,8 @@ import { Provider } from "react-redux";
 import store from "./store/index";
 
 import LandingPage from "./pages/LandingPage";
-import Products from "./pages/ProductPage.js";
-import Product from './pages/Product.js';
+import Products from "./pages/ProductPage";
+import Product from "./pages/Product.js";
 
 import Register from "./pages/Register.js";
 // import StripeContainer from "./pages/account/StripeContainer";
@@ -17,12 +17,16 @@ import LogIn from "./pages/Login";
 
 
 
+
+import Header from "./components/Header";
+
+
 function App() {
   
   return (
-  
     <Provider store={store}>
       <Router>
+        <Header />
         <Switch>
           <Route path='/' component={LandingPage} exact />
           <Route path='/product' component={Product} exact />
@@ -34,7 +38,7 @@ function App() {
         </Switch>
       </Router>
     </Provider>
-   
+
   );
 }
 

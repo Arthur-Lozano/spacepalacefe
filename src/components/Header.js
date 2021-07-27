@@ -75,6 +75,11 @@ const Header = () => {
           </li>
         )}
         <li>
+          <Link style={{ textDecoration: "none" }} to='/products'>
+            PRODUCTS
+          </Link>
+        </li>
+        <li>
           <Link style={{ textDecoration: "none" }} to='/cart'>
             CART
           </Link>
