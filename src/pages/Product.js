@@ -2,15 +2,11 @@ import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 
-// import { useSelector, useDispatch } from "react-redux";
-import { getOneProduct } from "../store/product-store";
-
 const Product = (props) => {
   const { id } = props.match.params;
 
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
-  console.log(product);
 
   const url = `${process.env.REACT_APP_BE_URL + "products/" + id}`;
 
