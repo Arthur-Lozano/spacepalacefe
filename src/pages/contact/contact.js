@@ -34,7 +34,6 @@ const ContactForm = () => {
       });
   };
 
-
   const onInputChange = event => {
     const { name, value } = event.target;
 
