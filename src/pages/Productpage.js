@@ -44,8 +44,6 @@ const Products = () => {
   useEffect(() => {
     dispatch(fetch());
   }, [dispatch]);
-  console.log(products);
-
   const classes = useStyles();
   return (
     <div className={classes.main}>
@@ -99,5 +97,4 @@ const Products = () => {
     </div>
   );
 };
-
 export default Products;
