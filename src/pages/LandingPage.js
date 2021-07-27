@@ -28,7 +28,6 @@ const LandingPage = () => {
   };
   return (
     <div style={style.container}>
-      <Header />
       <Banner />
       <Category1 />
       <BrowseByPlanet />

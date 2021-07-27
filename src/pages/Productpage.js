@@ -10,9 +10,12 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 
+import { Link } from "react-router-dom";
+
 // import { addToCart } from "./account/store/cart.js";
 import { useSelector, useDispatch } from "react-redux";
 import { fetch } from "../store/product-store";
+import { Redirect } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -52,7 +55,7 @@ const Products = () => {
       <Grid container space={3}>
         {products &&
           products.map((product, i) => (
-            <Grid item xs={3}>
+            <Grid key={i} item xs={12} sm={6} lg={3}>
               <Card key={i} className={classes.root}>
                 <CardActionArea>
                   <CardMedia
@@ -82,7 +85,12 @@ const Products = () => {
                     ADD TO CART
                   </Button>
                   <Button size='small' color='primary'>
-                    VIEW DETAILS
+                    <Link
+                      style={{ textDecoration: "none", color: "inherit" }}
+                      to={`/product/${product._id}`}
+                    >
+                      VIEW DETAILS
+                    </Link>
                   </Button>
                 </CardActions>
               </Card>

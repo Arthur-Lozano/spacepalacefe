@@ -1,7 +1,9 @@
 import React from "react";
 
-const Product = () => {
-  return <div>Hello from Product</div>;
+const Product = (props) => {
+  const { id } = props.match.params;
+
+  return <div>Hello from Product </div>;
 };
 
 export default Product;
