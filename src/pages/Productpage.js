@@ -15,7 +15,6 @@ import { Link } from "react-router-dom";
 // import { addToCart } from "./account/store/cart.js";
 import { useSelector, useDispatch } from "react-redux";
 import { fetch } from "../store/product-store";
-import { Redirect } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -23,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   root: {
     width: 325,
-    maxHeight: 325,
+    maxHeight: "auto",
     padding: theme.spacing(2),
     margin: theme.spacing(2),
   },
@@ -40,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Products = () => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products);
+  const products = useSelector((state) => state.products.listOfProducts);
 
   useEffect(() => {
     dispatch(fetch());
