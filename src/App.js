@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -10,13 +10,19 @@ import Products from "./pages/ProductPage";
 import Product from "./pages/Product.js";
 
 import Register from "./pages/Register.js";
-import StripeContainer from "./pages/account/StripeContainer";
-
+// import StripeContainer from "./pages/account/StripeContainer";
+import Payment from "./pages/Payment";
+import Cart from "./pages/cartpage.js";
 import LogIn from "./pages/Login";
+
+
+
+
 import Header from "./components/Header";
 
+
 function App() {
-  const [showItem, setShowItem] = useState(false);
+  
   return (
     <Provider store={store}>
       <Router>
@@ -27,10 +33,12 @@ function App() {
           <Route path='/login' component={LogIn} exact />
           <Route path='/products' component={Products} exact />
           <Route path='/register' component={Register} exact />
-          <Route path='/product/:id' component={Product} exact />
+          <Route path='/payment' component={Payment} exact />
+          <Route path='/cart' component={Cart} exact />
         </Switch>
       </Router>
     </Provider>
+
   );
 }
 

@@ -6,11 +6,11 @@ import Button from '@material-ui/core/Button';
 // import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import { makeStyles } from '@material-ui/core/styles';
-import  {  removeFromCart, }from '../../store/cart.js';
+import  {  removeFromCart, }from '../pages/account/store/cart.js';
 import { connect } from 'react-redux';
 
 
-import './Cart.scss';
+// import './Cart.scss';
 
 const useStyles = makeStyles({
   root: {
@@ -34,6 +34,7 @@ const useStyles = makeStyles({
 
 
 const Cart = (props) => {
+
 
     const classes = useStyles();
   
@@ -61,8 +62,11 @@ return (
                   
                   <Button onClick={() => props.removeFromCart(item)}> X </Button> 
 
-                  {/* <Button className="addButton" onClick={() => props.addToCart(product)} size="small" color ="primary">
-                ADD TO CART
+                  {/* <Button onClick={() => {
+                history.push('/checkout');
+                dispatch(toggleCartHidden());
+                }}>
+               GO TO CHECKOUT
               </Button> */}
                   
                 </ListItemSecondaryAction>
@@ -80,7 +84,7 @@ return (
 
 const mapStateToProps = (data) => {
   return {
-    cart: data.cart.cart,
+    cart: data.cart,
   }
 }
 
