@@ -15,7 +15,7 @@ import Header from '../components/Header';
 import Image from '../assets/space5.jpg';
 import { shadows } from '@material-ui/system';
 import { AirportShuttle } from '@material-ui/icons';
-import { addToCart } from './cart.js'
+import { addToCart } from './Cart.js'
 import { Link } from 'react-router-dom';
 const axios = require('axios');
 
@@ -119,12 +119,13 @@ export default function Album(props) {
                     <Button size="small" color="primary">
                       View
                     </Button>
-                    <Link to={`/product/${card._id}`}>
+                    <Link to={`/product/${card._id}`}> </Link>
+                      
                      <Button onClick={() => props.addToCart(product)}size="small" color="primary">
-                    </Link>
-                    ADD TO CART
-              </Button>
-
+                     </Button>
+                       ADD TO CART
+              {/* </Button> */}
+              
                   </CardActions>
                 </Card>
               </Grid>
@@ -135,5 +136,6 @@ export default function Album(props) {
       {/* Footer */}
       <Footer />
     </React.Fragment >
+
   );
 }
