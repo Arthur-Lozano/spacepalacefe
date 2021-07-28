@@ -1,4 +1,5 @@
 import React from "react";
+import Cart from "../components/Cart";
 import { useSelector, useDispatch } from "react-redux";
 
 const CartPage = () => {
@@ -7,7 +8,7 @@ const CartPage = () => {
   return (
     <div>
       {cart.map((product) => (
-        <p>{product.name}</p>
+        <Cart product={product} />
       ))}
     </div>
   );
