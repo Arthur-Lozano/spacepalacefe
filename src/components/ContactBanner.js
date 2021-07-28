@@ -1,5 +1,5 @@
 import React from "react";
-import banner from "../assets/space5.jpg";
+import banner from "../assets/space23.jpg";
 const ContactBanner = () => {
   const style = {
     container: {
@@ -19,7 +19,7 @@ const ContactBanner = () => {
   };
   return (
     <div style={style.container}>
-      <h2> Help </h2>
+      <h2> Contact Us </h2>
     </div>
   );
 };
