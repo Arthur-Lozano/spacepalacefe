@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const style = {
@@ -25,9 +26,15 @@ const Footer = () => {
   return (
     <div style={style.title}>
       <ul style={style.links}>
-        <li>CONTACT</li>
-        <li>ABOUT US</li>
-        <li>HELP</li>
+        <Link style={{ textDecoration: "none" }} to='/contact'>
+          CONTACT
+        </Link>
+        <Link style={{ textDecoration: "none" }} to='/about-us'>
+          ABOUT US
+        </Link>
+        <Link style={{ textDecoration: "none" }} to='/help'>
+          HELP
+        </Link>
       </ul>
       <p>&copy; Space Palace 2021</p>
 
