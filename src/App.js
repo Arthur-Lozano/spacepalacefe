@@ -4,14 +4,16 @@ import { Provider } from "react-redux";
 import store from "./store/index";
 
 import LandingPage from "./pages/LandingPage";
-import Products from "./pages/Productpage";
+import Products from "./pages/ProductPage";
 import Product from "./pages/Product.js";
 
 import Register from "./pages/Register.js";
 // import StripeContainer from "./pages/account/StripeContainer";
 import Payment from "./pages/Payment";
 import Cart from "./pages/cartpage.js";
-import LogIn from "./pages/Login";
+import LogIn from "./pages/LogIn.js";
+
+import ContactForm from "./pages/contact/contact";
 
 import Header from "./components/Header";
 
@@ -28,6 +30,7 @@ function App() {
           <Route path='/register' component={Register} exact />
           <Route path='/payment' component={Payment} exact />
           <Route path='/cart' component={Cart} exact />
+          <Route path='/contact' component={ContactForm} exact />
         </Switch>
       </Router>
     </Provider>

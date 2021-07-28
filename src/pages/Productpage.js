@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-
+import React from "react";
+import Products from "../components/Products";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -100,6 +100,8 @@ const Products = () => {
           ))}
       </Grid>
     </div>
+
   );
 };
-export default Products;
+
+export default Product;
