@@ -1,5 +1,4 @@
-import React from "react";
-import Products from "../components/Products";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -38,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Products = () => {
+const ProductsPage = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.listOfProducts);
 
@@ -100,8 +99,7 @@ const Products = () => {
           ))}
       </Grid>
     </div>
-
   );
 };
 
-export default Product;
+export default ProductsPage;
