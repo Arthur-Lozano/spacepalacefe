@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Form, Button } from 'react-bootstrap';
 import styles from '../contact/contact.css';
+import ContactBanner from '../../components/ContactBanner.js'
 
 const ContactForm = () => {
   const [state, setState] = useState({
@@ -45,6 +46,7 @@ const ContactForm = () => {
 
   return (
     <div>
+      <ContactBanner />
       {result && (
         <p className={`${result.success ? 'success' : 'error'}`}>
           {result.message}
