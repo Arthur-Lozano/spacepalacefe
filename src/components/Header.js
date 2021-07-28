@@ -41,7 +41,9 @@ const Header = () => {
   };
   return (
     <div style={style.title}>
+       <Link style={{ textDecoration: "none" }} to='/'>
       <h1>S P A C E &nbsp;&nbsp; P A L A C E</h1>
+      </Link>
       <ul style={style.links}>
         {!isLoggedIn ? (
           <li>
