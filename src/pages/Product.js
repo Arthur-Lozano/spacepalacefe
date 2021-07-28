@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { add } from "../store/cart-store";
 
 import axios from "axios";
 
 const Product = (props) => {
   const { id } = props.match.params;
+  const dispatch = useDispatch();
 
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
@@ -15,6 +18,10 @@ const Product = (props) => {
     console.log(response.data);
     setProduct(response.data);
     setLoading(false);
+  };
+
+  const addToCart = () => {
+    dispatch(add(product));
   };
 
   useEffect(() => {
@@ -67,7 +74,7 @@ const Product = (props) => {
             <h3>{product.name}</h3>
             <p>{product.details}</p>
             <p> {product.description}</p>
-            <button> Add to Cart</button>
+            <button onClick={addToCart}> Add to Cart</button>
           </div>
         </>
       )}

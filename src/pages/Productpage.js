@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 // import { addToCart } from "./account/store/cart.js";
 import { useSelector, useDispatch } from "react-redux";
 import { fetch } from "../store/product-store";
+import { add } from "../store/cart-store";
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -40,6 +41,10 @@ const useStyles = makeStyles((theme) => ({
 const Products = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.listOfProducts);
+
+  const addToCart = (product) => {
+    dispatch(add(product));
+  };
 
   useEffect(() => {
     dispatch(fetch());
@@ -75,7 +80,7 @@ const Products = () => {
                 </CardActionArea>
                 <CardActions className={classes.buttonContainer}>
                   <Button
-                    // onClick={() => products.addToCart(product)}
+                    onClick={() => addToCart(product)}
                     size='small'
                     color='primary'
                   >

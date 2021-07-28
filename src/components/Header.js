@@ -5,6 +5,7 @@ import { logout } from "../store/user-store";
 
 const Header = () => {
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   const style = {
@@ -81,7 +82,7 @@ const Header = () => {
         </li>
         <li>
           <Link style={{ textDecoration: "none" }} to='/cart'>
-            CART
+            CART({cart.length})
           </Link>
         </li>
         {isLoggedIn && (
