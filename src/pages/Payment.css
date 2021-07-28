@@ -1,4 +1,4 @@
-/* .FormGroup {
+.FormGroup {
   margin: 0 15px 20px;
   padding: 0;
   border-style: none;
@@ -27,7 +27,7 @@
   padding: 11px 15px 11px 0;
 }
 
-button {
+.submit {
   display: block;
   font-size: 16px;
   width: calc(100% - 30px);
@@ -45,7 +45,7 @@ button {
   border: none;
 }
 
-button:active {
+.submit:active {
   background-color: cadetblue;
   box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
     inset 0 1px 0 #e298d8;
@@ -61,4 +61,4 @@ button:active {
 h1,
 h3 {
   text-align: center;
-} */
+}
