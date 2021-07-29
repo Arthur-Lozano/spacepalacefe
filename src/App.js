@@ -6,6 +6,7 @@ import Products from "./pages/Productpage";
 import Product from "./pages/Product.js";
 import MyOrders from "./pages/MyOrders";
 
+
 // import StripeContainer from "./pages/account/StripeContainer";
 // import Payment from "./pages/Payment";
 import Cart from "./pages/cartpage.js";
