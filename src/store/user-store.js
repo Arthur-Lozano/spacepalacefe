@@ -13,10 +13,6 @@ export default function reducer(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case "REGISTER":
-      console.log(payload);
-      return payload;
-
     case "VALIDATE":
       if (payload) {
         const tokenUser = jwt.verify(payload, process.env.REACT_APP_SECRET);
@@ -27,9 +23,14 @@ export default function reducer(state = initialState, action) {
       }
 
     case "LOGOUT":
-      console.log("INSIDE LOGOUT STORE");
       cookie.remove("auth");
       return initialState;
+    case "UPDATE ORDER":
+      console.log(payload, "UPDATE ORDERS");
+      return {
+        ...state,
+        user: { ...state.user, orders: [payload, ...state.user.orders] },
+      };
     default:
       return state;
   }
@@ -39,7 +40,9 @@ export const register = (user) => async (dispatch) => {
   const url = `${process.env.REACT_APP_BE_URL + "register"}`;
   const response = await axios.post(url, user);
 
-  dispatch(saveUser(response.data));
+  const { token } = response.data;
+
+  dispatch(validateToken(token));
 };
 
 export const login = (user) => async (dispatch) => {
@@ -58,21 +61,22 @@ export const login = (user) => async (dispatch) => {
 };
 
 export const initial = () => async (dispatch) => {
-  const token = cookie.load("auth") || null;
+  const token = (await cookie.load("auth")) || null;
   dispatch(validateToken(token));
 };
-
-function saveUser(data) {
-  return {
-    type: "REGISTER",
-    payload: data,
-  };
-}
 
 function validateToken(token) {
   return {
     type: "VALIDATE",
     payload: token,
+  };
+}
+
+export function addOrders(order) {
+  console.log(order);
+  return {
+    type: "UPDATE ORDER",
+    payload: order,
   };
 }
 

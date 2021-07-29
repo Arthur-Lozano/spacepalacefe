@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { Form, Button } from 'react-bootstrap';
+
+import React, { useState } from "react";
+import axios from "axios";
+import { Form, Button } from "react-bootstrap";
+import styles from "../contact/contact.css";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -10,45 +12,49 @@ import ContactBanner from '../../components/ContactBanner.js'
 // import styles from '../contact/contact.css';
 const ContactForm = () => {
   const [state, setState] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const [result, setResult] = useState(null);
-  const sendEmail = event => {
+
+  const sendEmail = (event) => {
+
     event.preventDefault();
     axios
-      .post('https://spacepalacedb.herokuapp.com/send', { ...state })
-      .then(response => {
+      .post("https://spacepalacedb.herokuapp.com/send", { ...state })
+      .then((response) => {
         setResult(response.data);
         setState({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
         });
       })
       .catch(() => {
         setResult({
           success: false,
-          message: 'Something went wrong. Try again later'
+          message: "Something went wrong. Try again later",
         });
       });
   };
-  const onInputChange = event => {
+
+  const onInputChange = (event) => {
+
     const { name, value } = event.target;
     setState({
       ...state,
-      [name]: value
+      [name]: value,
     });
   };
   return (
     <div>
       <ContactBanner />
       {result && (
-        <p className={`${result.success ? 'success' : 'error'}`}>
+        <p className={`${result.success ? "success" : "error"}`}>
           {result.message}
         </p>
       )}

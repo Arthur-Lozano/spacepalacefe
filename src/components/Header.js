@@ -1,11 +1,13 @@
 import React from "react";
+import { IconButton, Badge, Button } from "@material-ui/core";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../store/user-store";
 import './header.css'
 const Header = () => {
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.cart.itemList);
   const dispatch = useDispatch();
 
   const style = {
@@ -26,6 +28,7 @@ const Header = () => {
       display: "flex",
       listStyleType: "none",
       justifyContent: "space-around",
+      alignItems: "center",
       width: "50%",
       textDecoration: "none",
     },
@@ -45,50 +48,49 @@ const Header = () => {
       <ul style={style.links}>
         {!isLoggedIn ? (
           <li>
-            <Link  className="link" style={{ textDecoration: "none" }} to='/login'>
+            <Button component={Link} to='/login'>
               LOGIN
-            </Link>
+            </Button>
           </li>
         ) : (
           <li>
-            <Link className="link"
-              style={{ textDecoration: "none", color: "black" }}
-              to='/account'
-            >
+            <Button component={Link} to='/account'>
               MY ACCOUNT
-            </Link>
+            </Button>
           </li>
         )}
         {!isLoggedIn ? (
           <li>
-            <Link className="link" style={{ textDecoration: "none" }} to='/register'>
+            <Button component={Link} to='/register'>
               REGISTER
-            </Link>
+            </Button>
           </li>
         ) : (
           <li>
-            <Link 
-              style={{ textDecoration: "none", color: "black" }}
-              to='/user/orders'
-            >
+
+            <Button component={Link} to='/user/orders'>
+
               MY ORDERS
-            </Link>
+            </Button>
           </li>
         )}
         <li>
-          <Link className="link" style={{ textDecoration: "none" }} to='/products'>
+          <Button component={Link} to='/products'>
             PRODUCTS
-          </Link>
+          </Button>
         </li>
         <li>
-          <Link className="link" style={{ textDecoration: "none" }} to='/cart'>
-            CART({cart.length})
-          </Link>
+          <IconButton component={Link} to='/cart'>
+            <Badge badgeContent={cart.length} showZero color='error'>
+              <ShoppingCartIcon />
+            </Badge>
+          </IconButton>
+
         </li>
         {isLoggedIn && (
-          <li style={style.logout} onClick={logoutHandler}>
+          <Button color='secondary' onClick={logoutHandler}>
             LOGOUT
-          </li>
+          </Button>
         )}
       </ul>
     </div>

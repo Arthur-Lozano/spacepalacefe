@@ -1,21 +1,20 @@
 import React, { useEffect } from "react";
 
-import { useDispatch } from "react-redux";
-import { initial } from "../store/user-store";
+// import { useDispatch } from "react-redux";
+// import { initial } from "../store/user-store";
 
 import Banner from "../components/Banner";
 import BrowseByPlanet from "../components/BrowseByPlanet";
 import Category1 from "../components/Category1";
 import Category2 from "../components/Category2";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const LandingPage = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(initial());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(initial());
+  // }, [dispatch]);
 
   const style = {
     container: {

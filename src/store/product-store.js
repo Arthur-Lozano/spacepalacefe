@@ -22,8 +22,21 @@ export default function reducer(state = initialState, action) {
         (item) => item.category === payload
       );
       return listByCategory;
+
     case "FETCH":
-      return { ...state, listOfProducts: payload };
+      if ("botany-seeds-fauna" in state) {
+        return state;
+      } else {
+        const catergories = payload.map((item) => {
+          item.category.forEach((cat) =>
+            cat in state ? state[cat].push(item) : (state[cat] = [item])
+          );
+          return item;
+        });
+        console.log(state);
+        return { ...state, listOfProducts: catergories };
+      }
+
     default:
       return state;
   }

@@ -1,30 +1,81 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import {
+  Typography,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+} from "@material-ui/core";
+
+import { useSelector, useDispatch } from "react-redux";
+import { add, subtract, removeFromCart } from "../store/cart-store";
+
+import useStyles from "./Cart-style";
 
 const Cart = (props) => {
+  const classes = useStyles();
   const { product } = props;
 
+  const dispatch = useDispatch();
+
+  const handleUpdateCartQty = (condition) => {
+    if (condition === "+") {
+      dispatch(add(product));
+    } else {
+      dispatch(subtract(product));
+    }
+  };
+
+  const handleRemoveFromCart = (id) => {
+    dispatch(removeFromCart(id));
+  };
+
   return (
-    <div>
-      <div>
-        <img src={product.images[0]} alt={product.name} />
-      </div>
-      <div>
-        <h3>{product.name}</h3>
-        <p>{product.quantity > 0 ? "In Stock" : "Out of Stock"}</p>
-        <select name='quantity'>
-          <option value='1'>1</option>
-          <option value='2'>2</option>
-          <option value='3'>3</option>
-          <option value='4'>4</option>
-          <option value='5'>5</option>
-          <option value='5+'>5+</option>
-        </select>
-        <button>Delete</button>
-      </div>
-      <div>
-        <h3>Price</h3>
-      </div>
-    </div>
+    <>
+      {product.cartQuantity > 0 ? (
+        <Card className='cart-item'>
+          <CardMedia
+            image={product.images[0]}
+            alt={product.name}
+            className={classes.media}
+          />
+          <CardContent className={classes.cardContent}>
+            <Typography variant='h4'>{product.name}</Typography>
+            <Typography variant='h5'>${product.price}</Typography>
+          </CardContent>
+          <CardActions className={classes.cardActions}>
+            <div className={classes.buttons}>
+              <Button
+                type='button'
+                size='small'
+                onClick={() => handleUpdateCartQty("-")}
+              >
+                -
+              </Button>
+              <Typography>&nbsp;{product.cartQuantity}&nbsp;</Typography>
+              <Button
+                type='button'
+                size='small'
+                onClick={() => handleUpdateCartQty("+")}
+              >
+                +
+              </Button>
+            </div>
+            <Button
+              variant='contained'
+              type='button'
+              color='secondary'
+              onClick={() => handleRemoveFromCart(product._id)}
+            >
+              Remove
+            </Button>
+          </CardActions>
+        </Card>
+      ) : (
+        ""
+      )}
+    </>
   );
 };
 
