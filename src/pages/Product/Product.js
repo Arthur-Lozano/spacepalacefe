@@ -111,7 +111,6 @@ const Product = (props) => {
                       </CardActions>
                     </Box>
                     {/* </Card> */}
-
                   </Typography>
                 </>
               )}
