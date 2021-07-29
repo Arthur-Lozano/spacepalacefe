@@ -13,7 +13,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import PublicSharpIcon from '@material-ui/icons/PublicSharp';
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
@@ -84,7 +84,7 @@ export default function SignUp() {
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
+          <PublicSharpIcon />
         </Avatar>
         <Typography component='h1' variant='h5'>
           Sign up
@@ -151,7 +151,7 @@ export default function SignUp() {
                 label='Confirm Password'
                 type='password'
                 id='confirmPassword'
-                // autoComplete='current-password'
+              // autoComplete='current-password'
               />
             </Grid>
             <Grid item xs={12}>

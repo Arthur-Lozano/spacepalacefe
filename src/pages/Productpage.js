@@ -23,7 +23,6 @@ const ProductsPage = () => {
   useEffect(() => {
     dispatch(fetch());
   }, [dispatch]);
-
   const renderProducts = () => {
     const listOfProducts = Object.entries(products).map(([key, value]) => {
       if (
@@ -81,3 +80,4 @@ const ProductsPage = () => {
 };
 
 export default ProductsPage;
+

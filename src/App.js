@@ -12,12 +12,15 @@ import Cart from "./pages/cartpage.js";
 import Login from "./pages/Login.js";
 
 import ContactForm from "./pages/contact/contact";
+import AboutUs from "./pages/AboutUs.js";
+import Help from "./pages/Help.js";
 
 import Header from "./components/Header";
 import Checkout from "./pages/Checkout";
-
 import { useDispatch } from "react-redux";
 import { initial } from "./store/user-store";
+import Footer from "./components/Footer";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -39,7 +42,10 @@ function App() {
         <Route path='/checkout' component={Checkout} exact />
         <Route path='/cart' component={Cart} exact />
         <Route path='/contact' component={ContactForm} exact />
+         <Route path='/about-us' component={AboutUs} exact />
+         <Route path='/help' component={Help} exact />
       </Switch>
+      <Footer />
     </Router>
   );
 }
