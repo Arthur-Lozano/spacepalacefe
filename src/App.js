@@ -5,7 +5,7 @@ import store from "./store/index";
 
 import LandingPage from "./pages/LandingPage";
 import Products from "./pages/Productpage";
-import Product from "./pages/Product.js";
+import Product from "./pages/Product/Product.js";
 
 import Register from "./pages/Register.js";
 // import StripeContainer from "./pages/account/StripeContainer";
