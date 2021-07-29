@@ -27,9 +27,10 @@ export default function reducer(state = initialState, action) {
       return initialState;
     case "UPDATE ORDER":
       console.log(payload, "UPDATE ORDERS");
+      console.log(state.user);
       return {
         ...state,
-        user: { ...state.user, orders: [payload, ...state.user.orders] },
+        user: { ...state.user, orders: payload },
       };
     default:
       return state;

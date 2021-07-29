@@ -80,7 +80,7 @@ export const updateOrders = (order, user) => async (dispatch) => {
   const response = await axios.put(url, { order: order, user: user.email });
   console.log(response);
 
-  dispatch(addOrders(response.data.orders));
+  dispatch(addOrders(response.data));
   dispatch(clearCart());
 };
 

@@ -1,8 +1,11 @@
 import React from "react";
+
 import food from "../assets/space29.jpg";
 import suit from "../assets/space24.jpg";
 import gun from "../assets/space31.jpg";
 import botany from "../assets/space27.jpg";
+
+import Link from "@material-ui/core/Link";
 
 const Category1 = () => {
   const style = {
@@ -59,24 +62,32 @@ const Category1 = () => {
       </div>
       <div style={style.catContainer}>
         <div style={style.catCard}>
-          <img style={style.image} src={suit} alt='suit' />
+          <Link href='/protection'>
+            <img style={style.image} src={suit} alt='suit' />
+          </Link>
           <h4>SUITS AND PROTECTIVE GEAR</h4>
           <p style={style.subTitle}>You're survival is our priority!</p>
         </div>
         <div style={style.catCard}>
-          <img style={style.image} src={gun} alt='suit' />
+          <Link href='/self-defense'>
+            <img style={style.image} src={gun} alt='suit' />
+          </Link>
           <h4>SELF-DEFENSE</h4>
           <p style={style.subTitle}>
             Aliens shoot first and ask questions later. Beat them to it!
           </p>
         </div>
         <div style={style.catCard}>
-          <img style={style.image} src={food} alt='suit' />
+          <Link href='/food'>
+            <img style={style.image} src={food} alt='suit' />
+          </Link>
           <h4>FOOD AND NOURISHMENT</h4>
           <p style={style.subTitle}>Don't forget to pack a lunch!</p>
         </div>
         <div style={style.catCard}>
-          <img style={style.image} src={botany} alt='suit' />
+          <Link href='/botany-seeds-fauna'>
+            <img style={style.image} src={botany} alt='suit' />
+          </Link>
           <h4>BOTANY, SEEDS AND FAUNA</h4>
           <p style={style.subTitle}>Take your home planet with you!</p>
         </div>

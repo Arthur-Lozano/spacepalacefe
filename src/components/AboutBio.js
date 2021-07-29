@@ -68,10 +68,10 @@ const Category1 = () => {
         <div style={style.catCard}>
           <img style={style.image} src={mark} alt='mark' />
           <h4>MARK DUENAS</h4>
-          <p style={style.subTitle}>Bio goes here!</p>
-          <p style={style.subTitle}>Bio goes here!</p>
-          <p style={style.subTitle}>Bio goes here!</p>
-          <p style={style.subTitle}>Bio goes here!</p>
+          <p style={style.subTitle}>United States Navy Veteran</p>
+          <p style={style.subTitle}>Software Developer</p>
+          <p style={style.subTitle}>From San Diego, CA</p>
+          <p style={style.subTitle}>Coffee Lover</p>
         </div>
         <div style={style.catCard}>
           <img style={style.image} src={nassir} alt='nassir' />
