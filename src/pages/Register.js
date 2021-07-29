@@ -13,7 +13,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import PublicSharpIcon from '@material-ui/icons/PublicSharp';
+import PublicSharpIcon from "@material-ui/icons/PublicSharp";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
@@ -23,7 +23,7 @@ function Copyright() {
     <Typography variant='body2' color='textSecondary' align='center'>
       {"Copyright © "}
       <Link color='inherit' href='https://material-ui.com/'>
-        Your Website
+        SPACE PALACE
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -53,6 +53,14 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
     backgroundColor: "#F8C51C",
   },
+  modalPaper: {
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+    opacity: ".9",
+    borderRadius: "10px",
+  },
 }));
 
 export default function SignUp() {
@@ -80,7 +88,7 @@ export default function SignUp() {
   };
 
   return (
-    <Container component='main' maxWidth='xs'>
+    <Container className={classes.modalPaper} component='main' maxWidth='xs'>
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
@@ -151,7 +159,7 @@ export default function SignUp() {
                 label='Confirm Password'
                 type='password'
                 id='confirmPassword'
-              // autoComplete='current-password'
+                // autoComplete='current-password'
               />
             </Grid>
             <Grid item xs={12}>

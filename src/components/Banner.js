@@ -1,11 +1,14 @@
 import React, { useEffect } from "react";
 import banner from "../assets/space18.jpg";
-import { Link } from "react-router-dom";
+
 import axios from "axios";
 import { useSelector } from "react-redux";
+import Modal from "./Modal";
+import Login from "../pages/Login";
 
 const Banner = () => {
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  const user = useSelector((state) => state.user.user);
 
   useEffect(() => {
     try {
@@ -49,16 +52,11 @@ const Banner = () => {
     <div style={style.container}>
       <h2> the shop of tomorrow! </h2>
       {!isLoggedIn ? (
-        <button style={style.btn}>
-          <Link
-            style={{ textDecoration: "none", color: "inherit" }}
-            to='/login'
-          >
-            LOGIN
-          </Link>
-        </button>
+        <Modal btnText='LOGIN' styling={style.btn}>
+          <Login />
+        </Modal>
       ) : (
-        ""
+        <p>Welcome to the Future {user.firstName.toUpperCase()} </p>
       )}
     </div>
   );

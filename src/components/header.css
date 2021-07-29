@@ -1,4 +1,4 @@
-.link{
+/* .link{
   color:black;
   text-align: center;
   font-weight:bold;
@@ -27,12 +27,9 @@
   font-size:xx-small;
   font-family:cursive;
 
-}
+} */
 
-
-
-
- /* @media(min-width:480px){
+/* @media(min-width:480px){
   body{
     max-width:768px;
     margin: auto;

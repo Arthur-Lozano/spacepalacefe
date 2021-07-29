@@ -1,15 +1,11 @@
-
 import React, { useState } from "react";
-import axios from "axios";
 import { Form, Button } from "react-bootstrap";
-import styles from "../contact/contact.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import ContactBanner from "../../components/ContactBanner.js";
 
-
-import ContactBanner from '../../components/ContactBanner.js'
-
-// import styles from '../contact/contact.css';
+// import styles from "../contact/contact.css";
 const ContactForm = () => {
   const [state, setState] = useState({
     name: "",
@@ -21,7 +17,6 @@ const ContactForm = () => {
   const [result, setResult] = useState(null);
 
   const sendEmail = (event) => {
-
     event.preventDefault();
     axios
       .post("https://spacepalacedb.herokuapp.com/send", { ...state })
@@ -43,7 +38,6 @@ const ContactForm = () => {
   };
 
   const onInputChange = (event) => {
-
     const { name, value } = event.target;
     setState({
       ...state,
@@ -58,51 +52,53 @@ const ContactForm = () => {
           {result.message}
         </p>
       )}
-      <div className={'container'}>
-        <form className={'inputform'} onSubmit={sendEmail}>
-          <Form.Group className="mb-3" controlId="name">
+      <div className={"container"}>
+        <form className={"inputform"} onSubmit={sendEmail}>
+          <Form.Group className='mb-3' controlId='name'>
             <Form.Label>Full Name</Form.Label>
             <Form.Control
-              type="text"
-              name="name"
+              type='text'
+              name='name'
               value={state.name}
-              placeholder="Enter your full name"
+              placeholder='Enter your full name'
               onChange={onInputChange}
             />
-            <Form.Text className='text-muted'>We will keep your email secure</Form.Text>
+            <Form.Text className='text-muted'>
+              We will keep your email secure
+            </Form.Text>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="email">
+          <Form.Group className='mb-3' controlId='email'>
             <Form.Label>Email</Form.Label>
             <Form.Control
-              type="text"
-              name="email"
+              type='text'
+              name='email'
               value={state.email}
-              placeholder="Enter your email"
+              placeholder='Enter your email'
               onChange={onInputChange}
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="subject">
+          <Form.Group className='mb-3' controlId='subject'>
             <Form.Label>Subject</Form.Label>
             <Form.Control
-              type="text"
-              name="subject"
+              type='text'
+              name='subject'
               value={state.subject}
-              placeholder="Enter subject"
+              placeholder='Enter subject'
               onChange={onInputChange}
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="subject">
+          <Form.Group className='mb-3' controlId='subject'>
             <Form.Label>Message</Form.Label>
             <Form.Control
-              as="textarea"
-              name="message"
+              as='textarea'
+              name='message'
               value={state.message}
-              rows="3"
-              placeholder="Enter your message"
+              rows='3'
+              placeholder='Enter your message'
               onChange={onInputChange}
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button variant='primary' type='submit'>
             Submit
           </Button>
         </form>

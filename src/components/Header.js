@@ -4,7 +4,10 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../store/user-store";
-import './header.css'
+import Modal from "./Modal";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+
 const Header = () => {
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
   const cart = useSelector((state) => state.cart.itemList);
@@ -44,13 +47,20 @@ const Header = () => {
   };
   return (
     <div style={style.title}>
-      <h1  className="title">S P A C E &nbsp;&nbsp; P A L A C E</h1>
+      <h1 className='title'>
+        <Link
+          style={{ textDecoration: "none", color: "inherit", fontSize: "2em" }}
+          to='/'
+        >
+          S P A C E &nbsp;&nbsp; P A L A C E
+        </Link>
+      </h1>
       <ul style={style.links}>
         {!isLoggedIn ? (
           <li>
-            <Button component={Link} to='/login'>
-              LOGIN
-            </Button>
+            <Modal btnText='LOGIN'>
+              <Login />
+            </Modal>
           </li>
         ) : (
           <li>
@@ -61,15 +71,13 @@ const Header = () => {
         )}
         {!isLoggedIn ? (
           <li>
-            <Button component={Link} to='/register'>
-              REGISTER
-            </Button>
+            <Modal btnText='REGISTER'>
+              <Register />
+            </Modal>
           </li>
         ) : (
           <li>
-
             <Button component={Link} to='/user/orders'>
-
               MY ORDERS
             </Button>
           </li>
@@ -85,7 +93,6 @@ const Header = () => {
               <ShoppingCartIcon />
             </Badge>
           </IconButton>
-
         </li>
         {isLoggedIn && (
           <Button color='secondary' onClick={logoutHandler}>

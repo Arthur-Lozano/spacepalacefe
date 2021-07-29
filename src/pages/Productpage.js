@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Product from "../components/Product";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import { Paper } from "@material-ui/core";
 
 import useStyles from "./Productpage-style";
 
@@ -9,6 +10,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetch } from "../store/product-store";
 import { add } from "../store/cart-store";
 
+import catImage from "../assets/space21.jpg";
 const ProductsPage = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -73,11 +75,17 @@ const ProductsPage = () => {
   return (
     <main className={classes.content}>
       <div className={classes.toolbar} />
-
+      <Paper
+        style={{
+          background: `url(${catImage})`,
+          backgroundSize: "cover",
+          width: "100%",
+          height: "30vh",
+        }}
+      ></Paper>
       {renderProducts()}
     </main>
   );
 };
 
 export default ProductsPage;
-

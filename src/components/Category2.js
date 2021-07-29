@@ -6,6 +6,8 @@ import starship from "../assets/space7.jpg";
 import chart from "../assets/space4.jpg";
 import security from "../assets/space6.jpg";
 
+import Link from "@material-ui/core/Link";
+
 const Category2 = () => {
   const style = {
     container: {
@@ -62,24 +64,32 @@ const Category2 = () => {
       </div>
       <div style={style.catContainer}>
         <div style={style.catCard}>
-          <img style={style.image} src={capsule} alt='suit' />
+          <Link href='/capsules-habitats'>
+            <img style={style.image} src={capsule} alt='suit' />
+          </Link>
           <h4>Capsules And Habitats</h4>
           <p style={style.subTitle}>
             Keep a roof over your head, no matter how far from home you are!
           </p>
         </div>
         <div style={style.catCard}>
-          <img style={style.image} src={tools} alt='suit' />
+          <Link href='/tools-equipment'>
+            <img style={style.image} src={tools} alt='suit' />
+          </Link>
           <h4>Tools And Equipment</h4>
           <p style={style.subTitle}>Things break, be ready to fix them!</p>
         </div>
         <div style={style.catCard}>
-          <img style={style.image} src={robots} alt='suit' />
+          <Link href='/robots-drones'>
+            <img style={style.image} src={robots} alt='suit' />
+          </Link>
           <h4>Robots and Drones</h4>
           <p style={style.subTitle}>Why do all the work yourself?</p>
         </div>
         <div style={style.catCard}>
-          <img style={style.image} src={starship} alt='suit' />
+          <Link href='/starships-rockets'>
+            <img style={style.image} src={starship} alt='suit' />
+          </Link>
           <h4>Starships And Rockets</h4>
           <p style={style.subTitle}>Don't let it be a one-way trip!</p>
         </div>
@@ -89,7 +99,9 @@ const Category2 = () => {
           <p style={style.subTitle}> Uncharted territory? Don't get lost!</p>
         </div>
         <div style={style.catCard}>
-          <img style={style.image} src={security} alt='suit' />
+          <Link href='/security-survival'>
+            <img style={style.image} src={security} alt='suit' />
+          </Link>
           <h4>Security and Survival</h4>
           <p style={style.subTitle}>Ensure you don't die!</p>
         </div>
