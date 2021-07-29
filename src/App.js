@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import LandingPage from "./pages/LandingPage";
 import Products from "./pages/Productpage";
-import Product from "./pages/Product.js";
+import Product from "./pages/Product/Product.js";
 import MyOrders from "./pages/MyOrders";
 
 
