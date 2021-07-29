@@ -75,6 +75,7 @@ const Product = (props) => {
       verticalAlign: 'top',
     }
   });
+
   const classes = useStyles();
   return (
     <>
