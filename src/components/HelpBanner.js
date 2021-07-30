@@ -15,11 +15,12 @@ const HelpBanner = () => {
       backgroundSize: "cover",
       fontSize: "6em",
       textShadow: "3px 3px #333333",
+      marginBottom: "50px",
     },
   };
   return (
     <div style={style.container}>
-      <h2> Help </h2>
+      <h2> Help & FAQs </h2>
     </div>
   );
 };

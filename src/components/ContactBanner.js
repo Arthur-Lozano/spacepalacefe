@@ -15,6 +15,7 @@ const ContactBanner = () => {
       backgroundSize: "cover",
       fontSize: "6em",
       textShadow: "3px 3px #333333",
+      marginBottom: "50px",
     },
   };
   return (
