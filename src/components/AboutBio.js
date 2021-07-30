@@ -42,7 +42,7 @@ const Category1 = () => {
       fontSize: ".7em",
     },
     image: {
-      width: "90%",
+      width: "75%",
       height: "400px",
       marginTop: "25px",
     },
@@ -60,10 +60,10 @@ const Category1 = () => {
         <div style={style.catCard}>
           <img style={style.image} src={arthur} alt='arthur' />
           <h4>ARTHUR LOZANO</h4>
-          <p style={style.subTitle}>Bio goes here!</p>
-          <p style={style.subTitle}>Bio goes here!</p>
-          <p style={style.subTitle}>Bio goes here!</p>
-          <p style={style.subTitle}>Bio goes here!</p>
+          <p style={style.subTitle}>Moved from Germany to Seattle, Originally from Chicago</p>
+          <p style={style.subTitle}>Retried from United States Air Force</p>
+          <p style={style.subTitle}>Master's Degree w/Focus on WebDev</p>
+          <p style={style.subTitle}>Excited for Journey Ahead in Coding</p>
         </div>
         <div style={style.catCard}>
           <img style={style.image} src={mark} alt='mark' />
@@ -76,10 +76,10 @@ const Category1 = () => {
         <div style={style.catCard}>
           <img style={style.image} src={nassir} alt='nassir' />
           <h4>NASSIR ABEGAZ</h4>
-          <p style={style.subTitle}>Bio goes here!</p>
-          <p style={style.subTitle}>Bio goes here!</p>
-          <p style={style.subTitle}>Bio goes here!</p>
-          <p style={style.subTitle}>Bio goes here!</p>
+          <p style={style.subTitle}>Originally from Ethiopia</p>
+          <p style={style.subTitle}>Background in Construction Supervision / Contract Admin</p>
+          <p style={style.subTitle}>Competence in JavaScript, HTML and CSS</p>
+          <p style={style.subTitle}>Inspired to Help Others Through Softward Development</p>
         </div>
         <div style={style.catCard}>
           <img style={style.image} src={ryan} alt='ryan' />

@@ -1,5 +1,6 @@
 import React from "react";
 import HelpBanner from "../components/HelpBanner";
+import HelpBody from "../components/HelpBody";
 
 const help = () => {
   const style = {
@@ -14,6 +15,7 @@ const help = () => {
   return (
     <div style={style.container}>
       <HelpBanner />
+      <HelpBody />
     </div>
   );
 };
